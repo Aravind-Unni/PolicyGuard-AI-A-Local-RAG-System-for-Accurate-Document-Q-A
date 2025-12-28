@@ -24,7 +24,7 @@ The pipeline follows a standard RAG workflow optimized for local execution:
 2.  **Chunking:** Text is split into chunks of 800 characters with a 150-character overlap using `RecursiveCharacterTextSplitter`.
 3.  **Embedding:** Chunks are converted into vector embeddings using the `sentence-transformers/all-MiniLM-L6-v2` model accessed using huggingface API key.
 4.  **Storage:** Embeddings are stored locally in a **ChromaDB** vector database.
-5.  **Retrieval:** When a user asks a question, the system retrieves the top 3-6 most relevant chunks.
+5.  **Retrieval:** When a user asks a question, the system retrieves the top 3 most relevant chunks.
 6.  **Generation:** The retrieved context and user question are passed to **Llama 3.2** (via Ollama) using a strict prompt template.
 
 ---
