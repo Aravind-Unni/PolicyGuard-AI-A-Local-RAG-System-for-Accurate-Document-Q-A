@@ -44,7 +44,7 @@ pip install -r requirements.txt
 ollama pull llama3.2
 
 ```
-📝 Prompt Engineering
+## 📝 Prompt Engineering
 
 You are a specific Policy Assistant for Rainbow Bazaar.
 Your goal is to answer the user question based ONLY on the provided context chunks.
@@ -68,7 +68,7 @@ FORMAT:
 **Details:** [Bullet points with citations]
 
 
-📊 Evaluation Results
+## 📊 Evaluation Results
 
 
 | Metric | Score | Description |
