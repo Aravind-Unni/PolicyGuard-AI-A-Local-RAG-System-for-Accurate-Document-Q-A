@@ -26,7 +26,7 @@ The pipeline follows a standard RAG workflow optimized for local execution:
 4.  **Storage:** Embeddings are stored locally in a **ChromaDB** vector database.
 5.  **Retrieval:** When a user asks a question, the system retrieves the top 3 most relevant chunks.
 6.  **Generation:** The retrieved context and user question are passed to **Llama 3.2** (via Ollama) using a strict prompt template.
-
+7.  **Evaluation:** The system uses an **"LLM-as-a-Judge"** approach where the model grades its own answers (1-5 scale) against a "Golden Dataset" to calculate Accuracy, Hallucination Avoidance, and Clarity scores.
 ---
 
 ## 🛠️ Setup Instructions
