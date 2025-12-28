@@ -76,3 +76,16 @@ FORMAT:
 | **Overall Accuracy** | **88.9%** | Percentage of questions answered correctly according to the rubric. |
 | **Hallucination Avoidance** | **66.7%** | Success rate in correctly refusing to answer out-of-scope questions (e.g., "Who is the CEO?"). |
 | **Answer Clarity** | **75.6%** | Average score (3.8/5.0) for coherence and formatting. |
+
+## ⚖️ Key Trade-offs & Improvements
+
+### Trade-offs Taken
+* **Chunk Size (800 chars):** Chosen to balance context with retrieval speed. Smaller chunks might miss context, while larger ones introduce noise.
+* **Model Size (Llama 3.2):** We opted for the smaller 3B parameter model for speed and low memory usage, which sacrifices some reasoning capability compared to larger models like Llama 3 70B or GPT-4.
+* **MMR Search:** We used Maximal Marginal Relevance (MMR) over pure cosine similarity to increase diversity in retrieval, which slightly increases retrieval time but reduces redundancy.
+
+### Future Improvements
+With more time, the following upgrades would improve the system:
+1.  **Hybrid Search:** Implement a mix of Keyword Search (BM25) and Semantic Search to better handle specific terms like product names or exact fees.
+2.  **Reranking Step:** Add a Cross-Encoder (e.g., `BGE-Reranker`) to re-score the retrieved documents before sending them to the LLM.
+3.  **UI Frontend:** Build a simple Streamlit or Chainlit interface for easier user interaction.
